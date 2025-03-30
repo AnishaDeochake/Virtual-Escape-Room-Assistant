@@ -1,0 +1,67 @@
+{
+  "type": "MaxHistoryTrackerFeaturizer",
+  "state_featurizer": {
+    "action_texts": [],
+    "entity_tag_specs": [],
+    "feature_states": {
+      "intent": {
+        "back": 0,
+        "enter_code": 1,
+        "examine_bookshelf": 2,
+        "examine_painting": 3,
+        "give_up": 4,
+        "greet": 5,
+        "hint_request": 6,
+        "look_around": 7,
+        "nlu_fallback": 8,
+        "out_of_scope": 9,
+        "read_book": 10,
+        "restart": 11,
+        "restart_game": 12,
+        "session_start": 13,
+        "whisper_phrase": 14
+      },
+      "action_name": {
+        "action_listen": 0,
+        "action_restart": 1,
+        "action_session_start": 2,
+        "action_default_fallback": 3,
+        "action_deactivate_loop": 4,
+        "action_revert_fallback_events": 5,
+        "action_default_ask_affirmation": 6,
+        "action_default_ask_rephrase": 7,
+        "action_two_stage_fallback": 8,
+        "action_unlikely_intent": 9,
+        "action_back": 10,
+        "...": 11,
+        "action_extract_slots": 12,
+        "utter_greet": 13,
+        "utter_introduction": 14,
+        "utter_look_around": 15,
+        "utter_examine_bookshelf": 16,
+        "utter_read_book": 17,
+        "utter_enter_code": 18,
+        "utter_examine_painting": 19,
+        "utter_whisper_phrase": 20,
+        "action_enter_code": 21,
+        "action_provide_hint": 22,
+        "action_restart_game": 23,
+        "action_game_over": 24,
+        "utter_game_over": 25,
+        "utter_restart_game": 26
+      },
+      "entities": {},
+      "slots": {
+        "game_started_0": 0,
+        "game_started_1": 1,
+        "bookshelf_examined_0": 2,
+        "bookshelf_examined_1": 3,
+        "code_entered_0": 4,
+        "code_entered_1": 5
+      },
+      "active_loop": {}
+    }
+  },
+  "remove_duplicates": true,
+  "max_history": 5
+}

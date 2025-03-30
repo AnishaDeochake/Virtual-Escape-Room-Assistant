@@ -1,0 +1,31 @@
+{
+  "lookup": {
+    "eJyLrq6NBQAEOAGx": "action_listen",
+    "eJyLrq7VUaguKEoti09MLsnMz7NSqIYw4vMSc1OtFKCcnMziktQ8oNrS4tQioJrMPCC3xEohLTEzp7Y2FgDOFRsK": "utter_fail",
+    "eJyLrq7VUaguKEoti09MLsnMz7NSqIYw4vMSc1OtFKCcnMziktQ8oNrS4tQioJrMPCC3xEohLTEzp5aAEaUlJalF8WCVOPTHAgCcfTMm": "action_listen",
+    "eJyLrq7VUaguKEoti09MLsnMz7NSqIYw4vMSc1OtFKCcnMziktQ8oNrS4tQioJrMPCC3xEohLTMvJT47tbK2NhYAPiUctw==": "utter_find_key",
+    "eJyLrq7VUaguKEoti09MLsnMz7NSqIYw4vMSc1OtFKCcnMziktQ8oNrS4tQioJrMPCC3xEohLTMvJT47tbKWgDGlJSWpRfFw1XjMiQUAMjM4LQ==": "action_listen",
+    "eJyLrq7VUaguKEoti09MLsnMz7NSqIYw4vMSc1OtFKCcnMziktQ8oNrS4tQioJrMPCC3xEqhPCOzuCC1KL4goyixOLW2NhYA9IQfUg==": "utter_whisper_phrase",
+    "eJyLrq7VUaguKEoti09MLsnMz7NSqIYw4vMSc1OtFKCcnMziktQ8oNrS4tQioJrMPCC3xEqhPCOzuCC1KL4goyixOLWWgGGlJSVAtWh6CJoZCwCT5D/+": "action_listen",
+    "eJyLrq7VUaguKEoti09MLsnMz7NSqIYw4vMSc1OtFKCcnMziktQ8oNrS4tQioJrMPCC3xEoBSKQWxSfnp6TW1sYCAHjpHYY=": "action_check_code",
+    "eJyLrq7VUaguKEoti09MLsnMz7NSqIYw4vMSc1OtFKCcnMziktQ8oNrS4tQioJrMPCC3xEoBSKQWxSfnp6TWEmdQckZqcjZEA17DYgHCtjrE": "utter_enter_code",
+    "eJyLrq7VUaguKEoti09MLsnMz7NSqIYw4vMSc1OtFKCcnMziktQ8oNrS4tQioJrMPCC3xEoBSKQWxSfnp6TWEmdQckZqcjZEAwWGlZaAVCKpx2tWLACKFlfY": "action_listen",
+    "eJyLrq7VUaguKEoti09MLsnMz7NSqIYw4vMSc1OtFKCcnMziktQ8oNrS4tQioJrMPCC3xEqhNC8nPzk7PqUosTy1qLY2FgDUrB7e": "action_unlock_drawer",
+    "eJyLrq7VUaguKEoti09MLsnMz7NSqIYw4vMSc1OtFKCcnMziktQ8oNrS4tQioJrMPCC3xEqhNC8nPzk7PqUosTy1qJY4s1D1EDIyFgAFRz7s": "action_listen",
+    "eJyLrq7VUaguKEoti09MLsnMz7NSqIYw4vMSc1OtFKCcnMziktQ8oNrS4tQioJrMPCC3xEoBqDE1MSc+IzMlJTUvviCjKLE4tbY2FgC1NCGa": "action_reveal_hidden_phrase",
+    "eJyLrq7VUaguKEoti09MLsnMz7NSqIYw4vMSc1OtFKCcnMziktQ8oNrS4tQioJrMPCC3xEoBqDE1MSc+IzMlJTUvviCjKLE4tZY4I7FqJdKCWACG1kcg": "action_listen",
+    "eJyLrq7VUaguKEoti09MLsnMz7NSqIYw4vMSc1OtFKCcnMziktQ8oNrS4tQioJrMPCC3xEqhpCixID4TJJ9UlFhUWVsbCwAS/B+v": "action_trap_in_library",
+    "eJyLrq7VUaguKEoti09MLsnMz7NSqIYw4vMSc1OtFKCcnMziktQ8oNrS4tQioJrMPCC3xEqhpCixID4TJJ9UlFhUWUucaei6CBsbCwCK10Ff": "action_listen",
+    "eJyLrq7VUaguKEoti09MLsnMz7NSqIYw4vMSc1OtFKCcnMziktQ8oNrS4tQioJrMPCC3xEoBSKQWxZcX5eelxyfnp6TW1sYCADN7IBI=": "utter_enter_wrong_code",
+    "eJyLrq7VUaguKEoti09MLsnMz7NSqIYw4vMSc1OtFKCcnMziktQ8oNrS4tQioJrMPCC3xEoBSKQWxZcX5eelxyfnp6TWEjCutASkHkMXEebGAgAWkEI+": "action_give_hint_for_code",
+    "eJyLrq7VUaguKEoti09MLsnMz7NSqIYw4vMSc1OtFKCcnMziktQ8oNrS4tQioJrMPCC3xEoBSKQWxZcX5eelxyfnp6TWEjCutASkHkMXxeZCOemZZanxGUBD4tPyi4g2OhYA32ZlbQ==": "action_listen",
+    "eJwtitsJgDAMAFfJAE7QVURCrRGLmpT0AVK6uwH9uztu7mOCnpQa+lCisIP+AbK/ycEvV8yF2N6aSe2JbFocJJUWN8JwVcJdFC2kg8KDq8g5xvICHx0l6A==": "action_provide_clue_for_prophecy_book",
+    "eJyLrq7VUaguKEoti09MLsnMz7NSqIYw4vMSc1OtFKCcnMziktQ8oNrS4tQioJrMPCC3xEqhoCi/LDMlNT45pzQ1Pi2/KB4oUJCRmlwZn5Sfn11LnOEEDCHZ0lgA6OpUCg==": "action_listen",
+    "eJwtytEJgDAMRdFVMoATdJUiIZSHFDQNTfSndHcL+ncP3DzmRsM6HpYStWmi8QWrXEj046we0PXejr6eqouRqBmUHaUj2MRdDsy5v5U6IUg=": "action_open_secret_passage",
+    "eJyLrq7VUaguKEoti09MLsnMz7NSqIYw4vMSc1OtFKCcnMziktQ8oNrS4tQioJrMPCC3xEohvyA1L744NbkotSS+ILG4ODE9tZY4E7HpJM74WAC/+kYq": "action_listen",
+    "eJwtytEJgDAMRdFVMoATdBWRUMqDBjSWJOpH6e4W9O8euGsfC/VmuDmXkFMT9S9Y84FEP3bxgM73cth8RCcj0VPFG4wdxRDcqmXHGNsL2pgiNw==": "utter_whisper_secret_phrase",
+    "eJyLrq7VUaguKEoti09MLsnMz7NSqIYw4vMSc1OtFKCcnMziktQ8oNrS4tQioJrMPCC3xEqhPCOzuCC1KL44NbkotSS+IKMosTi1loCZpSUlQC3YtRJrQywARwdIrQ==": "action_listen",
+    "eJyLrq7VUaguKEoti09MLsnMz7NSqIYw4vMSc1OtFKCcnMziktQ8oNrS4tQioJrMPCC3xEqhKDUxJb6gKL8gIzW5Mj4pPz+7tjYWAHNNIN0=": "utter_read_prophecy_book",
+    "eJyLrq7VUaguKEoti09MLsnMz7NSqIYw4vMSc1OtFKCcnMziktQ8oNrS4tQioJrMPCC3xEqhKDUxJb6gKL8gIzW5Mj4pPz+7loCBpSUlqUXxWPQRZXYsAKprRJ8=": "action_listen"
+  }
+}

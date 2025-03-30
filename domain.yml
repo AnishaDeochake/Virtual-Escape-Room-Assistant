@@ -1,0 +1,77 @@
+version: "3.1"
+
+slots:
+  game_started:
+    type: bool
+    initial_value: false
+    mappings: []
+
+  bookshelf_examined:
+    type: bool
+    initial_value: false
+    mappings: []
+
+  code_entered:
+    type: bool
+    initial_value: false
+    mappings: []
+  
+  painting_examined:
+    type: bool
+    influence_conversation: false
+    mappings: []
+
+intents:
+  - greet
+  - look_around
+  - examine_bookshelf
+  - read_book
+  - enter_code
+  - examine_painting
+  - whisper_phrase
+  - hint_request
+  - give_up  
+  - restart_game  
+
+actions:
+  - action_set_game_started
+  - utter_greet
+  - utter_look_around
+  - utter_examine_bookshelf
+  - utter_read_book
+  - utter_enter_code
+  - utter_examine_painting
+  - utter_whisper_phrase
+  - action_enter_code
+  - action_give_hint
+  - action_restart_game  
+  - action_game_over  
+  - action_examine_bookshelf  
+  - action_read_book           
+  - action_examine_painting   
+  - action_whisper_phrase
+  - action_start_game
+
+responses:
+  utter_greet:
+    - text: "Hello, adventurer! You have entered the cursed library. Can you escape?"
+  utter_look_around:
+    - text: "You are surrounded by towering bookshelves, an old desk with a locked drawer, and a large painting on the wall."
+  utter_examine_bookshelf:
+    - text: "You notice a dusty book titled 'Prophecy of the Lost Key.'"
+  utter_read_book:
+    - text: "The book contains a prophecy: 'The key lies hidden where numbers align with fate.'"
+  utter_enter_code:
+    - text: "The drawer clicks open, revealing a golden key!"
+  utter_examine_painting:
+    - text: "As you examine the painting, you see a hidden phrase written beneath it."
+  utter_whisper_phrase:
+    - text: "The bookshelf shifts, revealing a secret tunnel. You step inside and escape the cursed library!"
+  utter_game_over:
+    - text: "Game over! The cursed library remains locked. Try again to escape!"
+  utter_restart_game:
+    - text: "The game will restart. Good luck!"
+
+
+session_config:
+  session_expiration_time: 60

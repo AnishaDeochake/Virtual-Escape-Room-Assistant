@@ -1,0 +1,16 @@
+{
+  "0": "enter_code",
+  "1": "enter_wrong_code",
+  "2": "enter_wrong_phrase",
+  "3": "escape",
+  "4": "escape_library",
+  "5": "examine_bookshelf",
+  "6": "examine_painting",
+  "7": "fail",
+  "8": "find_key",
+  "9": "greet",
+  "10": "read_prophecy_book",
+  "11": "search_bookshelf",
+  "12": "whisper_phrase",
+  "13": "whisper_secret_phrase"
+}

@@ -1,0 +1,9 @@
+{
+  "0": "enter_code",
+  "1": "examine_bookshelf",
+  "2": "examine_painting",
+  "3": "greet",
+  "4": "look_around",
+  "5": "read_book",
+  "6": "whisper_phrase"
+}

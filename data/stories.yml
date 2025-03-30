@@ -1,0 +1,59 @@
+version: "3.1"
+
+stories:
+  - story: greet and start game
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - action: action_start_game  # Removed utter_introduction to match the rule
+
+  - story: look around and find clue
+    steps:
+      - intent: look_around
+      - slot_was_set:
+          - game_started: true
+      - action: utter_look_around
+
+  - story: find and read book
+    steps:
+      - intent: examine_bookshelf
+      - action: action_examine_bookshelf
+      - action: utter_examine_bookshelf
+      - intent: read_book
+      - slot_was_set:
+          - bookshelf_examined: true
+      - action: action_read_book
+      - action: utter_read_book
+
+  - story: enter the correct code
+    steps:
+      - intent: enter_code
+      - action: action_enter_code
+      - action: utter_enter_code
+
+  - story: examine painting and whisper phrase
+    steps:
+      - intent: examine_painting
+      - action: action_examine_painting
+      - action: utter_examine_painting
+      - intent: whisper_phrase
+      - action: action_whisper_phrase
+      - action: utter_whisper_phrase
+
+  - story: user asks for a hint
+    steps:
+      - intent: hint_request
+      - action: action_give_hint
+
+  - story: user gives up
+    steps:
+      - intent: give_up
+      - action: action_game_over
+      - action: utter_game_over  # Ensure consistency with rule
+
+  - story: restart the game
+    steps:
+      - intent: restart_game
+      - action: action_restart_game
+      - action: utter_restart_game
+      - action: action_start_game  # Ensure consistency with rule

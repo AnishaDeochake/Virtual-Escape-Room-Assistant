@@ -1,0 +1,33 @@
+stories:
+  - story: Test successful game completion
+    steps:
+      - user: |
+          hello
+        intent: greet
+      - action: utter_greet
+      - action: utter_introduction
+      - action: action_start_game
+      - user: |
+          look around
+        intent: look_around
+      - action: utter_look_around
+      - user: |
+          examine bookshelf
+        intent: examine_bookshelf
+      - action: action_examine_bookshelf
+      - action: utter_examine_bookshelf
+      - user: |
+          read book
+        intent: read_book
+      - action: action_read_book
+      - action: utter_read_book
+      - user: |
+          enter code 1234
+        intent: enter_code
+      - action: action_enter_code
+      - action: utter_enter_code
+      - user: |
+          whisper phrase
+        intent: whisper_phrase
+      - action: action_whisper_phrase
+      - action: utter_whisper_phrase

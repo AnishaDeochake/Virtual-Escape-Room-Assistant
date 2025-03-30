@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cursed Escape Room Chatbot</title>
+    <script>
+        let mediaRecorder;
+        let audioChunks = [];
+
+        function appendMessage(message, className) {
+            let chatBox = document.getElementById("chat-box");
+            let messageDiv = document.createElement("div");
+            messageDiv.classList.add(className);
+            messageDiv.innerText = message;
+            chatBox.appendChild(messageDiv);
+            chatBox.scrollTop = chatBox.scrollHeight;
+        }
+
+        function sendMessage() {
+            let userInput = document.getElementById("user-input").value.trim();
+            if (!userInput) return;
+
+            appendMessage("You: " + userInput, "user-message");
+            document.getElementById("user-input").value = "";
+
+            fetch("/chat", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ message: userInput })
+            })
+            .then(response => response.json())
+            .then(data => {
+                appendMessage("Bot: " + (data.text || "I'm not sure how to respond."), "bot-message");
+                if (data.audio) {
+                    playAudioResponse(data.audio);
+                }
+            })
+            .catch(error => {
+                console.error("Error:", error);
+                appendMessage("Bot: Something went wrong. Please try again.", "bot-message");
+            });
+        }
+
+        function startRecording() {
+            navigator.mediaDevices.getUserMedia({ audio: true })
+            .then(stream => {
+                mediaRecorder = new MediaRecorder(stream);
+                audioChunks = [];
+
+                document.getElementById("voice-btn").innerText = "🎤 Recording...";
+                document.getElementById("voice-btn").disabled = true;
+
+                mediaRecorder.ondataavailable = event => {
+                    audioChunks.push(event.data);
+                };
+
+                mediaRecorder.onstop = () => {
+                    let audioBlob = new Blob(audioChunks, { type: "audio/wav" });
+                    let formData = new FormData();
+                    formData.append("audio", audioBlob);
+
+                    fetch("/chat", { method: "POST", body: formData })
+                    .then(response => response.json())
+                    .then(data => {
+                        appendMessage("Bot: " + (data.text || "I'm not sure how to respond."), "bot-message");
+                        if (data.audio) {
+                            playAudioResponse(data.audio);
+                        }
+                    })
+                    .catch(error => {
+                        console.error("Error sending audio:", error);
+                        appendMessage("Bot: Something went wrong with voice input.", "bot-message");
+                    })
+                    .finally(() => {
+                        stopMicrophone(stream);
+                        document.getElementById("voice-btn").innerText = "🎤 Voice";
+                        document.getElementById("voice-btn").disabled = false;
+                    });
+                };
+
+                mediaRecorder.start();
+                setTimeout(() => mediaRecorder.stop(), 5000);
+            })
+            .catch(error => {
+                alert("Microphone access denied or unavailable.");
+                console.log("Microphone error:", error);
+            });
+        }
+
+        function stopMicrophone(stream) {
+            stream.getTracks().forEach(track => track.stop());
+        }
+
+        function playAudioResponse(audioUrl) {
+            let audio = new Audio(audioUrl);
+            audio.play();
+        }
+
+        document.addEventListener("DOMContentLoaded", () => {
+            document.getElementById("user-input").addEventListener("keypress", (event) => {
+                if (event.key === "Enter") {
+                    sendMessage();
+                }
+            });
+        });
+    </script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #1a1a1a;
+            color: #eaeaea;
+            font-family: 'Courier New', Courier, monospace;
+            overflow: hidden;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        h1 {
+            font-family: 'Press Start 2P', cursive;
+            text-align: center;
+            color: #c21010;
+            font-size: 3.5em;
+            margin-bottom: 20px;
+        }
+
+        #chat-container {
+            width: 90%;
+            max-width: 900px;
+            min-height: 500px;
+            border: 3px solid #333333;
+            background-color: #252525;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.8);
+        }
+
+        #chat-box {
+            min-height: 350px;
+            max-height: 60vh;
+            overflow-y: auto;
+            padding: 10px;
+            background-color: #333333;
+            border-radius: 5px;
+            font-size: 1.5em;
+            color: #d1d1d1;
+        }
+
+        .input-container {
+            display: flex;
+            margin-top: 10px;
+        }
+
+        #user-input {
+            flex: 1;
+            padding: 12px;
+            font-size: 1.5em;
+            background-color: #444444;
+            color: #fff;
+            border-radius: 5px;
+            margin-right: 10px;
+        }
+
+        #send-btn, #voice-btn {
+            padding: 12px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+            background-color: #444444;
+            color: #fff;
+            font-size: 1.5em;
+            box-shadow: 0px 0px 10px rgba(255, 50, 50, 0.7);
+        }
+
+        #send-btn:hover, #voice-btn:hover {
+            background-color: #ff3232;
+        }
+
+        .user-message {
+            color: #ffffff; /* Green for user messages */
+            margin-bottom: 10px;
+        }
+
+        .bot-message {
+            color:  #ff3232; /* Orange for bot messages */
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Cursed Escape Room Chatbot</h1>
+    <div id="chat-container">
+        <div id="chat-box"></div>
+        <div class="input-container">
+            <input type="text" id="user-input" placeholder="Type a message..." />
+            <button id="send-btn" onclick="sendMessage()">Send</button>
+            <button id="voice-btn" onclick="startRecording()">🎤 Voice</button>
+        </div>
+    </div>
+</body>
+</html>

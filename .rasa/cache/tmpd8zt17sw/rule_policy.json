@@ -1,0 +1,29 @@
+{
+  "lookup": {
+    "rules": {
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"greet\"}}]": "utter_greet",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"greet\"}}, {\"prev_action\": {\"action_name\": \"utter_greet\"}, \"user\": {\"intent\": \"greet\"}}]": "utter_introduction",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"greet\"}}, {\"prev_action\": {\"action_name\": \"utter_greet\"}, \"user\": {\"intent\": \"greet\"}}, {\"prev_action\": {\"action_name\": \"utter_introduction\"}, \"user\": {\"intent\": \"greet\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"look_around\"}}]": "utter_look_around",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"look_around\"}}, {\"prev_action\": {\"action_name\": \"utter_look_around\"}, \"user\": {\"intent\": \"look_around\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"enter_code\"}}]": "utter_enter_code",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"enter_code\"}}, {\"prev_action\": {\"action_name\": \"utter_enter_code\"}, \"user\": {\"intent\": \"enter_code\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"whisper_phrase\"}}]": "utter_whisper_phrase",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"whisper_phrase\"}}, {\"prev_action\": {\"action_name\": \"utter_whisper_phrase\"}, \"user\": {\"intent\": \"whisper_phrase\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"examine_painting\"}}]": "utter_examine_painting",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"examine_painting\"}}, {\"prev_action\": {\"action_name\": \"utter_examine_painting\"}, \"user\": {\"intent\": \"examine_painting\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"examine_bookshelf\"}}]": "utter_examine_bookshelf",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"examine_bookshelf\"}}, {\"prev_action\": {\"action_name\": \"utter_examine_bookshelf\"}, \"user\": {\"intent\": \"examine_bookshelf\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"read_book\"}}]": "utter_read_book",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"read_book\"}}, {\"prev_action\": {\"action_name\": \"utter_read_book\"}, \"user\": {\"intent\": \"read_book\"}}]": "action_listen"
+    },
+    "rule_only_slots": [],
+    "rule_only_loops": [],
+    "rules_for_loop_unhappy_path": {},
+    "rules_not_in_stories": [
+      "predicting default action with intent session_start",
+      "predicting default action with intent back",
+      "predicting default action with intent restart"
+    ]
+  }
+}

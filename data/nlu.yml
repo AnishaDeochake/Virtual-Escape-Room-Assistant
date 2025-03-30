@@ -1,0 +1,97 @@
+version: "3.1"
+
+nlu:
+  - intent: greet
+    examples: |
+      - hello
+      - hi
+      - hey
+      - greetings
+      - howdy
+      - what's up
+      - hi there
+  - intent: look_around
+    examples: |
+      - look around
+      - what do I see?
+      - describe the room
+      - what do I see here?
+      - what is around me?
+      - take a look at the room
+      - describe my surroundings
+      - what's in the room?
+  - intent: examine_bookshelf
+    examples: |
+      - examine bookshelf
+      - check bookshelves
+      - search the books
+      - take a closer look at the bookshelf
+      - investigate the bookshelves
+      - check out the books on the shelf
+      - what’s on the bookshelf?
+  - intent: read_book
+    examples: |
+      - read prophecy book
+      - open the book and read
+      - open the book
+      - read the ancient book
+      - look at the ancient text
+  - intent: enter_code
+    examples: |
+      - enter "1842"
+      - try code "1234"
+      - input "5678"
+      - try entering code "5678"
+      - put in the code
+  - intent: examine_painting
+    examples: |
+      - examine painting
+      - inspect the painting on the wall
+      - look at the painting
+      - check the wall art
+      - look at the artwork
+      - check out the picture
+      - observe the painting
+      - take a closer look at the wall art
+  - intent: whisper_phrase
+    examples: |
+      - whisper secret phrase
+      - say the hidden words
+      - speak the special phrase
+      - say the magic words
+      - tell me the special words
+      - speak the hidden phrase
+      - speak the mystical words
+  - intent: hint_request
+    examples: |
+      - I need a hint
+      - I need a clue
+      - Can you give me a clue?
+      - I'm stuck, help me!
+      - Provide a hint, please.
+      - Any clues to solve this?
+      - give me a hint, please
+      - help me with a clue
+      - can you help me with a hint?
+      - could you provide a hint?
+  - intent: give_up
+    examples: |
+      - I give up
+      - Quit the game
+      - End game
+      - I surrender
+      - forget it, I give up
+      - quit the puzzle
+      - I’m done, end the game
+      - I can’t do it, quit game
+      - I’m finished, stop the game
+  - intent: restart_game
+    examples: |
+      - Restart game
+      - Start over
+      - New game
+      - start the game from the beginning
+      - reset the game
+      - begin a new game
+      - start over, please
+      - reset and try again

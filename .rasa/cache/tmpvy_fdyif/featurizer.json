@@ -1,0 +1,86 @@
+{
+  "type": "MaxHistoryTrackerFeaturizer",
+  "state_featurizer": {
+    "action_texts": [],
+    "entity_tag_specs": [],
+    "feature_states": {
+      "intent": {
+        "back": 0,
+        "enter_code": 1,
+        "enter_wrong_code": 2,
+        "enter_wrong_phrase": 3,
+        "escape": 4,
+        "escape_library": 5,
+        "examine_bookshelf": 6,
+        "examine_painting": 7,
+        "fail": 8,
+        "find_key": 9,
+        "greet": 10,
+        "nlu_fallback": 11,
+        "out_of_scope": 12,
+        "read_book": 13,
+        "read_prophecy_book": 14,
+        "restart": 15,
+        "search_bookshelf": 16,
+        "session_start": 17,
+        "whisper_phrase": 18,
+        "whisper_secret_phrase": 19
+      },
+      "action_name": {
+        "action_listen": 0,
+        "action_restart": 1,
+        "action_session_start": 2,
+        "action_default_fallback": 3,
+        "action_deactivate_loop": 4,
+        "action_revert_fallback_events": 5,
+        "action_default_ask_affirmation": 6,
+        "action_default_ask_rephrase": 7,
+        "action_two_stage_fallback": 8,
+        "action_unlikely_intent": 9,
+        "action_back": 10,
+        "...": 11,
+        "action_extract_slots": 12,
+        "action_provide_clue_for_prophecy_book": 13,
+        "action_give_riddle_for_code": 14,
+        "action_check_code": 15,
+        "action_unlock_drawer": 16,
+        "action_reveal_hidden_phrase": 17,
+        "action_check_phrase": 18,
+        "action_open_secret_passage": 19,
+        "action_give_hint_for_code": 20,
+        "action_trap_in_library": 21,
+        "utter_enter_code": 22,
+        "utter_enter_wrong_code": 23,
+        "utter_enter_wrong_phrase": 24,
+        "utter_escape": 25,
+        "utter_escape_library": 26,
+        "utter_examine_bookshelf": 27,
+        "utter_examine_painting": 28,
+        "utter_fail": 29,
+        "utter_find_key": 30,
+        "utter_greet": 31,
+        "utter_read_book": 32,
+        "utter_read_prophecy_book": 33,
+        "utter_search_bookshelf": 34,
+        "utter_whisper_phrase": 35,
+        "utter_whisper_secret_phrase": 36,
+        "puzzle_form": 37
+      },
+      "entities": {
+        "code": 0,
+        "key": 1,
+        "phrase": 2
+      },
+      "slots": {
+        "code_0": 0,
+        "phrase_0": 1,
+        "key_0": 2
+      },
+      "active_loop": {
+        "puzzle_form": 0
+      }
+    }
+  },
+  "remove_duplicates": true,
+  "max_history": 5
+}

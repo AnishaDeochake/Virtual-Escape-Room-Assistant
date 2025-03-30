@@ -1,0 +1,12 @@
+{
+  "0": "enter_code",
+  "1": "examine_bookshelf",
+  "2": "examine_painting",
+  "3": "give_up",
+  "4": "greet",
+  "5": "hint_request",
+  "6": "look_around",
+  "7": "read_book",
+  "8": "restart_game",
+  "9": "whisper_phrase"
+}

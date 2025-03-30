@@ -1,0 +1,58 @@
+version: "3.1"
+
+rules:
+  - rule: User greets the assistant
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - action: action_start_game
+
+  - rule: User looks around at the start of the game
+    condition:
+      - slot_was_set:
+          - game_started: true
+    steps:
+      - intent: look_around
+      - action: utter_look_around
+      - action: action_listen
+
+  - rule: User examines the bookshelf
+    condition:
+      - slot_was_set:
+          - bookshelf_examined: false
+    steps:
+      - intent: examine_bookshelf
+      - action: action_examine_bookshelf
+      - action: utter_examine_bookshelf
+
+  - rule: User enters the correct code
+    condition:
+      - slot_was_set:
+          - code_entered: false
+    steps:
+      - intent: enter_code
+      - action: action_enter_code
+      - action: utter_enter_code
+
+  - rule: User whispers the phrase and escapes
+    steps:
+      - intent: whisper_phrase
+      - action: action_whisper_phrase
+      - action: utter_whisper_phrase
+
+  - rule: User requests a hint
+    steps:
+      - intent: hint_request
+      - action: action_give_hint
+  - rule: User gives up and ends the game
+    steps:
+      - intent: give_up
+      - action: action_game_over
+      - action: utter_game_over  # Ensure consistency with story
+
+  - rule: User restarts the game
+    steps:
+      - intent: restart_game
+      - action: action_restart_game
+      - action: utter_restart_game
+      - action: action_start_game  # Ensure consistency with story
