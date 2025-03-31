@@ -5,7 +5,7 @@ stories:
     steps:
       - intent: greet
       - action: utter_greet
-      - action: action_start_game  # Removed utter_introduction to match the rule
+      - action: action_start_game
 
   - story: look around and find clue
     steps:
@@ -17,8 +17,9 @@ stories:
   - story: find and read book
     steps:
       - intent: examine_bookshelf
-      - action: action_examine_bookshelf
-      - action: utter_examine_bookshelf
+      - action: action_examine_object
+      - slot_was_set:
+          - last_object: bookshelf
       - intent: read_book
       - slot_was_set:
           - bookshelf_examined: true
@@ -34,8 +35,9 @@ stories:
   - story: examine painting and whisper phrase
     steps:
       - intent: examine_painting
-      - action: action_examine_painting
-      - action: utter_examine_painting
+      - action: action_examine_object
+      - slot_was_set:
+          - last_object: painting
       - intent: whisper_phrase
       - action: action_whisper_phrase
       - action: utter_whisper_phrase
@@ -49,11 +51,11 @@ stories:
     steps:
       - intent: give_up
       - action: action_game_over
-      - action: utter_game_over  # Ensure consistency with rule
+      - action: utter_game_over
 
   - story: restart the game
     steps:
       - intent: restart_game
       - action: action_restart_game
       - action: utter_restart_game
-      - action: action_start_game  # Ensure consistency with rule
+      - action: action_start_game

@@ -1,33 +1,59 @@
+version: "3.1"
+
 stories:
-  - story: Test successful game completion
+  - story: test successful escape room run
     steps:
-      - user: |
+      - user: | 
           hello
         intent: greet
       - action: utter_greet
-      - action: utter_introduction
       - action: action_start_game
-      - user: |
+
+      - user: | 
           look around
         intent: look_around
       - action: utter_look_around
-      - user: |
+
+      - user: | 
           examine bookshelf
         intent: examine_bookshelf
-      - action: action_examine_bookshelf
-      - action: utter_examine_bookshelf
-      - user: |
+      - slot_was_set:
+          - last_object: bookshelf
+      - action: action_examine_object
+      - slot_was_set:
+          - bookshelf_examined: true
+
+      - user: | 
           read book
         intent: read_book
       - action: action_read_book
       - action: utter_read_book
-      - user: |
-          enter code 1234
+
+      - user: | 
+          enter "1234"
         intent: enter_code
+      - slot_was_set:
+          - last_code: "1234"
       - action: action_enter_code
       - action: utter_enter_code
-      - user: |
-          whisper phrase
+      - slot_was_set:
+          - code_entered: true
+
+      - user: | 
+          examine painting
+        intent: examine_painting
+      - slot_was_set:
+          - last_object: painting
+      - action: action_examine_object
+      - slot_was_set:
+          - painting_examined: true
+
+      - user: | 
+          whisper magic words
         intent: whisper_phrase
+      - slot_was_set:
+          - last_phrase: magic words
       - action: action_whisper_phrase
       - action: utter_whisper_phrase
+      - slot_was_set:
+          - game_started: false

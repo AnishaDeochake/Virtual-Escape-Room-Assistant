@@ -10,6 +10,7 @@ nlu:
       - howdy
       - what's up
       - hi there
+
   - intent: look_around
     examples: |
       - look around
@@ -20,48 +21,54 @@ nlu:
       - take a look at the room
       - describe my surroundings
       - what's in the room?
+
   - intent: examine_bookshelf
     examples: |
-      - examine bookshelf
-      - check bookshelves
-      - search the books
-      - take a closer look at the bookshelf
-      - investigate the bookshelves
-      - check out the books on the shelf
-      - what’s on the bookshelf?
+      - examine [bookshelf](object)
+      - check [bookshelves](object)
+      - search the [books](object)
+      - take a closer look at the [bookshelf](object)
+      - investigate the [bookshelves](object)
+      - check out the [books](object) on the shelf
+      - what’s on the [bookshelf](object)?
+
   - intent: read_book
     examples: |
-      - read prophecy book
-      - open the book and read
-      - open the book
-      - read the ancient book
-      - look at the ancient text
+      - read [prophecy book](object)
+      - open the [book](object) and read
+      - open the [book](object)
+      - read the [ancient book](object)
+      - look at the [ancient text](object)
+
   - intent: enter_code
     examples: |
-      - enter "1842"
-      - try code "1234"
-      - input "5678"
-      - try entering code "5678"
-      - put in the code
+      - enter ["1842"](code)
+      - try code ["1234"](code)
+      - input ["5678"](code)
+      - try entering code ["5678"](code)
+      - put in the [code](code)
+
   - intent: examine_painting
     examples: |
-      - examine painting
-      - inspect the painting on the wall
-      - look at the painting
-      - check the wall art
-      - look at the artwork
-      - check out the picture
-      - observe the painting
-      - take a closer look at the wall art
+      - examine [painting](object)
+      - inspect the [painting](object) on the wall
+      - look at the [painting](object)
+      - check the [wall art](object)
+      - look at the [artwork](object)
+      - check out the [picture](object)
+      - observe the [painting](object)
+      - take a closer look at the [wall art](object)
+
   - intent: whisper_phrase
     examples: |
-      - whisper secret phrase
-      - say the hidden words
-      - speak the special phrase
-      - say the magic words
-      - tell me the special words
-      - speak the hidden phrase
-      - speak the mystical words
+      - whisper [secret phrase](phrase)
+      - say the [hidden words](phrase)
+      - speak the [special phrase](phrase)
+      - say the [magic words](phrase)
+      - tell me the [special words](phrase)
+      - speak the [hidden phrase](phrase)
+      - speak the [mystical words](phrase)
+
   - intent: hint_request
     examples: |
       - I need a hint
@@ -74,6 +81,7 @@ nlu:
       - help me with a clue
       - can you help me with a hint?
       - could you provide a hint?
+
   - intent: give_up
     examples: |
       - I give up
@@ -85,6 +93,7 @@ nlu:
       - I’m done, end the game
       - I can’t do it, quit game
       - I’m finished, stop the game
+
   - intent: restart_game
     examples: |
       - Restart game

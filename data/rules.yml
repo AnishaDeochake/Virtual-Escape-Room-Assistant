@@ -16,14 +16,13 @@ rules:
       - action: utter_look_around
       - action: action_listen
 
-  - rule: User examines the bookshelf
+  - rule: User examines an object
     condition:
       - slot_was_set:
-          - bookshelf_examined: false
+          - game_started: true
     steps:
       - intent: examine_bookshelf
-      - action: action_examine_bookshelf
-      - action: utter_examine_bookshelf
+      - action: action_examine_object
 
   - rule: User enters the correct code
     condition:
@@ -44,15 +43,16 @@ rules:
     steps:
       - intent: hint_request
       - action: action_give_hint
+
   - rule: User gives up and ends the game
     steps:
       - intent: give_up
       - action: action_game_over
-      - action: utter_game_over  # Ensure consistency with story
+      - action: utter_game_over
 
   - rule: User restarts the game
     steps:
       - intent: restart_game
       - action: action_restart_game
       - action: utter_restart_game
-      - action: action_start_game  # Ensure consistency with story
+      - action: action_start_game
